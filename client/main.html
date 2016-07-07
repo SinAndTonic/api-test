@@ -1,0 +1,25 @@
+<head>
+	<title>Api Stuff Test!</title>
+</head>
+
+<body>
+	{{> apiTest}}
+	<p>{{> currentWatchList}}</p>
+</body>
+
+<template name="apiTest">
+	More stuff
+	<button id="watchList" class="doTest">GET Request Test</button>
+	<button id="latestListings" class="doTest">GET Latest</button>
+</template>
+
+<template name="currentWatchList">
+<table>
+<thead><td>Title</td><td>Price</td></thead>
+<tbody>
+		{{#each currentList}}
+				<tr><td><a href='http://tmsandbox.co.nz{{CategoryPath}}/auction-{{ListingId}}.htm'>{{Title}}</a></td><td>{{PriceDisplay}}</td><td>{{BuyNowPrice}}</td></tr>
+		{{/each}}
+</tbody>
+</table>
+</template>
